@@ -2,7 +2,7 @@
 
 # AIM:
 
-To develop a simple webserver to serve html programming pages.
+To develop a simple webserver to display top five web application development language.
 
 ## DESIGN STEPS:
 
@@ -26,8 +26,37 @@ Serving the HTML pages.
 
 Testing the webserver
 
-## PROGRAM:
+## PROGRAM
+from http.server import HTTPServer,Bas
+content ="""
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Web server</title>
+</head>
+<h1>Top Five Web Application Framework</h1>
+<h2>1.Django</h2>
+<h2>2.MEAN Stack</h2>
+<h2>3.React</he>
+<h2>4.Angular</h2>
+<h2>5.Express</h2>
 
+</body>
+</html>
+"""
+class MyServer(BaseHTTPRequestHandler):
+    def do_GET(self):
+        print('Get request received...')
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(content.encode())
+          
+
+print("This is my Webserver")
+server_address =('',80)
+httpd = HTTPServer(server_address,MyServer)
+httpd.serve_forever()
+```
 ## OUTPUT:
 
 ## RESULT:
