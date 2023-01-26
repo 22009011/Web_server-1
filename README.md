@@ -28,7 +28,7 @@ Testing the webserver
 
 ## PROGRAM
 from http.server import HTTPServer,Bas
-content ="""
+```
 <!DOCTYPE html>
 <html>
 <head>
